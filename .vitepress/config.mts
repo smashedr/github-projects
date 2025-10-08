@@ -13,7 +13,7 @@ const settings = {
   image: '/images/logo.png',
   image32: '/images/logo32.png',
   color: '#3e63dd',
-  source_repo: 'https://github.com/cssnr/my-vitepress',
+  source_repo: 'https://github.com/smashedr/github-projects',
 }
 
 // https://vitepress.dev/reference/site-config
