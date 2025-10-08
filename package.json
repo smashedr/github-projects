@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "docs": "npm run docs:dev",
+    "docs:build": "vitepress build .",
+    "docs:dev": "vitepress dev .",
+    "docs:preview": "vitepress preview .",
+    "prettier:check": "npx prettier --check .",
+    "prettier:write": "npx prettier --write ."
+  },
+  "dependencies": {
+    "lucide-vue-next": "^0.544.0",
+    "vitepress": "^1.6.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

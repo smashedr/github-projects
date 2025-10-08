@@ -1,0 +1,45 @@
+:root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(120deg, var(--vp-c-indigo-3), var(--vp-c-text-3));
+
+    --vp-home-hero-image-background-image: linear-gradient(0deg, var(--vp-c-brand-3));
+    --vp-home-hero-image-filter: blur(65px);
+}
+
+:root.dark {
+    --vp-home-hero-name-background: linear-gradient(120deg, var(--vp-c-indigo-2), var(--vp-c-text-1));
+}
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden; /* for animate.css */
+}
+
+summary {
+    cursor: pointer;
+}
+
+table th {
+    text-wrap: nowrap;
+}
+
+.search-keywords {
+    display: none;
+}
+
+/* NOTE: This is a "fix" for the search modal content shift */
+/* NOTE: This fix has bugs on fullscreen elements like swiper */
+@supports (scrollbar-gutter: stable) {
+    /* Note: local search is: 768px */
+    @media (min-width: 769px) {
+        html {
+            scrollbar-gutter: stable;
+        }
+    }
+}
+
+.vp-doc p > img,
+.vp-doc p > a > img {
+    display: inline-block;
+    margin-right: 8px;
+}
