@@ -82,6 +82,8 @@ export default defineConfig({
       {
         text: 'Sites',
         items: [
+          { text: 'CSSNR Actions', link: 'https://actions.cssnr.com/' },
+          { text: 'Node Badges', link: 'https://smashedr.github.io/node-badges-docs/' },
           { text: 'Django Files', link: 'https://django-files.github.io/' },
           { text: 'VitePress Swiper', link: 'https://vitepress-swiper.cssnr.com/' },
           { text: 'VitePress Contributors', link: 'https://vitepress-contributors.cssnr.com/' },
@@ -90,7 +92,6 @@ export default defineConfig({
           { text: 'Portainer Deploy', link: 'https://portainer-deploy.cssnr.com/' },
           { text: 'Zipline Android', link: 'https://zipline-android.cssnr.com/' },
           { text: 'Zipline Extension', link: 'https://zipline-extension.cssnr.com/' },
-          { text: 'Node Badges', link: 'https://smashedr.github.io/node-badges-docs/' },
         ],
       },
       { text: 'Support', link: '/support', activeMatch: '^/(support|faq)/?' },
