@@ -83,9 +83,18 @@ jobs:
         with:
           name: "artifact"
 
+      - name: "No Rubbits"
+        run: |
+          cat <<EOF > robots.txt
+          User-agent: *
+          Disallow: /
+          EOF
+
       - name: "Debug Artifact"
         continue-on-error: true
         run: |
+          cat robots.txt
+          echo "----------"
           tree .
 
       - name: "Setup SSH"
@@ -95,7 +104,7 @@ jobs:
           ssh-keyscan -p "${{ env.SSH_PORT }}" -H "${{ env.SSH_HOST }}" \
             | tee -a "${HOME}/.ssh/known_hosts"
 
-      - name: "Setup Path"
+      - name: "Configure Path"
         env:
           path: github-projects
         run: |
