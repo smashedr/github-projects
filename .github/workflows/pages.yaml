@@ -6,8 +6,8 @@ on:
       - "master"
     paths:
       - ".github/workflows/pages.yaml"
-      - "docs/**"
       - ".vitepress/**"
+      - "docs/**"
       - "package*.json"
   workflow_dispatch:
 
