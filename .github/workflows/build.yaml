@@ -1,0 +1,71 @@
+name: "Build"
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        type: string
+        default: "artifact"
+      path:
+        type: string
+        default: ".vitepress/dist"
+
+env:
+  path: ""
+  purge-domain: ""
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: "Debug CTX github"
+        continue-on-error: true
+        env:
+          GITHUB_CTX: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CTX"
+
+      - name: "Checkout"
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: "Install"
+        run: |
+          npm ci
+
+      - name: "Build"
+        run: |
+          npm run docs:build
+
+      - name: "Debug"
+        continue-on-error: true
+        run: |
+          echo "inputs.name: ${{ inputs.name }}"
+          echo "inputs.path: ${{ inputs.path }}"
+          echo "::group::ls"
+          ls -lAh .
+          echo "::endgroup::"
+          ls -lAh ${{ inputs.path }}
+          echo "::group::tree"
+          tree ${{ inputs.path }}
+          echo "::endgroup::"
+
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.name }}
+          path: ${{ inputs.path }}
+          if-no-files-found: "error"
+          include-hidden-files: true
