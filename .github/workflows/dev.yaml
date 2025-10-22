@@ -30,7 +30,6 @@ jobs:
       contents: read
     with:
       name: "artifact"
-      path: ".vitepress/dist"
 
   deploy:
     name: "Deploy"

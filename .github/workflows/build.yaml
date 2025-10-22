@@ -9,6 +9,9 @@ on:
       path:
         type: string
         default: ".vitepress/dist"
+      pages:
+        type: boolean
+        default: false
 
 env:
   path: ""
@@ -63,9 +66,16 @@ jobs:
           echo "::endgroup::"
 
       - name: "Upload Artifact"
+        if: ${{ !inputs.pages }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.name }}
           path: ${{ inputs.path }}
           if-no-files-found: "error"
           include-hidden-files: true
+
+      - name: "Upload Pages Artifact"
+        if: ${{ inputs.pages }}
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ inputs.path }}
