@@ -81,6 +81,19 @@ jobs:
         run: |
           tree .
 
+      - name: "Configure Path"
+        env:
+          path: github-projects
+        run: |
+          mkdir "${{ env.path }}"
+          rsync -aPvh --remove-source-files ./ "${{ env.path }}"
+          find . -type d -empty -delete
+          # Add html redirect
+          cat <<EOF > index.html
+          <html><head><meta http-equiv="refresh" content="3; url=/${{ env.path }}" /></head><body>
+          <p>Redirecting to: <a href="/${{ env.path }}">/${{ env.path }}</a></p></body></html>
+          EOF
+
       - name: "No Robots"
         run: |
           cat <<EOF > robots.txt
