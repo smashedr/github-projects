@@ -1,24 +1,25 @@
 name: "Dev"
 
 on:
+  workflow_dispatch:
   push:
+    branches-ignore: ["master"]
     paths:
       - ".github/workflows/dev.yaml"
       - ".vitepress/**"
       - "docs/**"
       - "package*.json"
-  workflow_dispatch:
 
 env:
   SSH_HOST: ${{ secrets.DEV_DEPLOY_HOST }}
-  SSH_PORT: 2222
+  SSH_PORT: ${{ secrets.DEV_DEPLOY_PORT }}
   SSH_USER: ${{ secrets.DEV_DEPLOY_USER }}
   SSH_PASS: ${{ secrets.DEV_DEPLOY_PASS }}
   SSH_DEST: /static
 
 concurrency:
   group: dev
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -26,14 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
-    permissions:
-      contents: read
+    if: ${{ !contains(github.event.head_commit.message, '#nodev') }}
 
     steps:
       - name: "Checkout"
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
+      - name: "Debug CTX github"
+        continue-on-error: true
+        env:
+          GITHUB_CTX: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CTX"
 
       - name: "Setup Node 24"
         uses: actions/setup-node@v6
@@ -60,24 +66,11 @@ jobs:
     timeout-minutes: 5
     needs: build
 
-    permissions:
-      pages: write
-      id-token: write
-
     environment:
       name: dev
-      url: https://static-site.cssnr.com/github-projects
+      url: https://dev-static.cssnr.com/
 
     steps:
-      - name: "Debug Variables"
-        continue-on-error: true
-        run: |
-          echo "env.SSH_HOST: ${{ env.SSH_HOST }}"
-          echo "env.SSH_PORT: ${{ env.SSH_PORT }}"
-          echo "env.SSH_USER: ${{ env.SSH_USER }}"
-          echo "env.SSH_PASS: ${{ env.SSH_PASS }}"
-          echo "env.SSH_DEST: ${{ env.SSH_DEST }}"
-
       - name: "Download Artifact"
         uses: actions/download-artifact@v5
         with:
@@ -86,35 +79,20 @@ jobs:
       - name: "Debug Artifact"
         continue-on-error: true
         run: |
-          cat robots.txt
-          echo "----------"
           tree .
 
-      - name: "Setup SSH"
-        run: |
-          mkdir -p "${HOME}/.ssh"
-          chmod 0700 "${HOME}/.ssh"
-          ssh-keyscan -p "${{ env.SSH_PORT }}" -H "${{ env.SSH_HOST }}" \
-            | tee -a "${HOME}/.ssh/known_hosts"
-
-      - name: "Configure Path"
-        env:
-          path: github-projects
-        run: |
-          mkdir "${{ env.path }}"
-          rsync -aPvh --remove-source-files ./ "${{ env.path }}"
-          find . -type d -empty -delete
-          # Add html redirect
-          cat <<EOF > index.html
-          <html><head><meta http-equiv="refresh" content="0; url=/${{ env.path }}" /></head><body></body></html>
-          EOF
-
-      - name: "No Rubbits"
+      - name: "No Robots"
         run: |
           cat <<EOF > robots.txt
           User-agent: *
           Disallow: /
           EOF
+
+      - name: "Setup SSH"
+        run: |
+          mkdir -p "${HOME}/.ssh" && chmod 0700 "${HOME}/.ssh"
+          ssh-keyscan -p "${{ env.SSH_PORT }}" -H "${{ env.SSH_HOST }}" \
+            | tee -a "${HOME}/.ssh/known_hosts"
 
       - name: "Deploy Artifact"
         env:
@@ -127,4 +105,4 @@ jobs:
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          description: "https://static-site.cssnr.com/github-projects"
+          description: "https://dev-static.cssnr.com/"
