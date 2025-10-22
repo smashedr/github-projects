@@ -83,13 +83,6 @@ jobs:
         with:
           name: "artifact"
 
-      - name: "No Rubbits"
-        run: |
-          cat <<EOF > robots.txt
-          User-agent: *
-          Disallow: /
-          EOF
-
       - name: "Debug Artifact"
         continue-on-error: true
         run: |
@@ -111,6 +104,16 @@ jobs:
           mkdir "${{ env.path }}"
           rsync -aPvh --remove-source-files ./ "${{ env.path }}"
           find . -type d -empty -delete
+          cat <<EOF > index.html
+          <html><head><meta http-equiv="refresh" content="0; url=/${{ env.path }}" /></head><body></body></html>
+          EOF
+
+      - name: "No Rubbits"
+        run: |
+          cat <<EOF > robots.txt
+          User-agent: *
+          Disallow: /
+          EOF
 
       - name: "Deploy Artifact"
         env:
