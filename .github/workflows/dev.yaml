@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0
 
       - name: "Setup Node 24"
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 24
 
@@ -104,6 +104,7 @@ jobs:
           mkdir "${{ env.path }}"
           rsync -aPvh --remove-source-files ./ "${{ env.path }}"
           find . -type d -empty -delete
+          # Add html redirect
           cat <<EOF > index.html
           <html><head><meta http-equiv="refresh" content="0; url=/${{ env.path }}" /></head><body></body></html>
           EOF
