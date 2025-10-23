@@ -28,7 +28,7 @@ jobs:
 
   deploy:
     name: "Deploy"
-    uses: ./.github/workflows/deploy-static.yaml
+    uses: cssnr/workflows/.github/workflows/rsync-artifacts.yaml
     needs: build
     permissions:
       contents: read
