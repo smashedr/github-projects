@@ -2,7 +2,7 @@
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/smashedr/github-projects/pages.yaml?logo=cachet&label=pages)](https://github.com/smashedr/github-projects/actions/workflows/pages.yaml)
 [![GitHub Lint](https://img.shields.io/github/actions/workflow/status/smashedr/github-projects/lint.yaml?logo=cachet&label=lint)](https://github.com/smashedr/github-projects/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/smashedr/github-projects?logo=vitepress&logoColor=white&label=updated)](https://github.com/smashedr/github-projects/pulse)
-[![GitHub Contributors](https://img.shields.io/github/contributors/smashedr/github-projects?logo=github)](https://github.com/smashedr/github-projects/graphs/contributors)
+[![GitHub Contributors](https://img.shields.io/github/contributors-anon/smashedr/github-projects?logo=github)](https://github.com/smashedr/github-projects/graphs/contributors)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/smashedr/github-projects?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/smashedr/github-projects)
 [![GitHub Discussions](https://img.shields.io/github/discussions/smashedr/github-projects?logo=github)](https://github.com/smashedr/github-projects/discussions)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/smashedr/github-projects?style=flat&logo=github)](https://github.com/smashedr/github-projects/stargazers)
