@@ -10,6 +10,8 @@ on:
       - "docs/**"
       - "package*.json"
 
+# Debug 1
+
 concurrency:
   group: dev
   cancel-in-progress: true
