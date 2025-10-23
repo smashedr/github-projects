@@ -12,6 +12,8 @@ on:
       pages:
         type: boolean
         default: false
+    secrets:
+      webhook:
 
 env:
   path: ""
@@ -79,3 +81,12 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ inputs.path }}
+
+      - name: "Send Discord Failure Notification"
+        if: ${{ failure() && env.webhook }}
+        uses: sarisia/actions-status-discord@v1
+        env:
+          webhook: ${{ secrets.webhook }}
+        with:
+          webhook: ${{ secrets.webhook }}
+          description: "https://dev-static.cssnr.com/"
