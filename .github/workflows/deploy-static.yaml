@@ -11,7 +11,7 @@ on:
         required: true
       port:
         required: true
-      discord-webhook:
+      webhook:
     inputs:
       name:
         type: string
@@ -106,7 +106,7 @@ jobs:
         if: ${{ env.webhook }}
         uses: sarisia/actions-status-discord@v1
         env:
-          webhook: ${{ secrets.discord-webhook }}
+          webhook: ${{ secrets.webhook }}
         with:
-          webhook: ${{ secrets.discord-webhook }}
+          webhook: ${{ secrets.webhook }}
           description: "https://dev-static.cssnr.com/"
