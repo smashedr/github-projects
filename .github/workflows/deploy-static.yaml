@@ -21,7 +21,7 @@ on:
         default: "https://dev-static.cssnr.com/"
       artifact:
         type: string
-        default: "artifacts"
+        default: "artifact"
       dest:
         type: string
         default: "/static"
