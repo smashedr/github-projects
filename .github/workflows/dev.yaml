@@ -10,8 +10,6 @@ on:
       - "docs/**"
       - "package*.json"
 
-# Debug 1
-
 concurrency:
   group: dev
   cancel-in-progress: true
@@ -20,11 +18,12 @@ jobs:
   build:
     name: "Build"
     if: ${{ !contains(github.event.head_commit.message, '#nodev') }}
-    uses: ./.github/workflows/build.yaml
+    uses: cssnr/workflows/.github/workflows/npm-build.yaml@master
     permissions:
       contents: read
     with:
-      name: "artifact"
+      build: "npm run docs:build"
+      path: ".vitepress/dist"
 
   deploy:
     name: "Deploy"
