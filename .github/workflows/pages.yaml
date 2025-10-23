@@ -22,10 +22,12 @@ jobs:
   build:
     name: "Build"
     if: ${{ !contains(github.event.head_commit.message, '#nodeploy') }}
-    uses: ./.github/workflows/build.yaml
+    uses: cssnr/workflows/.github/workflows/npm-build.yaml@master
     permissions:
       contents: read
     with:
+      build: "npm run docs:build"
+      path: ".vitepress/dist"
       pages: true
 
   deploy:
