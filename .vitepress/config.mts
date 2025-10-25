@@ -98,6 +98,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
+      { icon: 'vitepress', link: settings.source_repo },
       { icon: 'github', link: 'https://github.com/cssnr' },
       { icon: 'mozilla', link: 'https://addons.mozilla.org/en-US/firefox/user/18021912/' },
       { icon: 'npm', link: 'https://www.npmjs.com/~smashed' },
