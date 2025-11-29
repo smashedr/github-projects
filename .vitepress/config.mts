@@ -76,6 +76,7 @@ export default defineConfig({
           { text: 'Web Extensions', link: '/pages/web-extensions' },
           { text: 'Android Apps', link: '/pages/android-apps' },
           { text: 'NPM Packages', link: '/pages/npm-packages' },
+          { text: 'Websites', link: '/pages/sites' },
           //
         ],
       },
@@ -92,6 +93,10 @@ export default defineConfig({
           { text: 'Portainer Deploy', link: 'https://portainer-deploy.cssnr.com/' },
           { text: 'Zipline Android', link: 'https://zipline-android.cssnr.com/' },
           { text: 'Zipline Extension', link: 'https://zipline-extension.cssnr.com/' },
+          { text: 'Zipline CLI', link: 'https://zipline-cli.cssnr.com/' },
+          { text: 'Actions Tools', link: 'https://actions-tools.cssnr.com/' },
+          { text: 'Vultr Python', link: 'https://github.com/cssnr/vultr-python' },
+          { text: 'Zensical Action', link: 'https://zensical-action.cssnr.com/' },
         ],
       },
       { text: 'Support', link: '/support', activeMatch: '^/(support|faq)/?' },
@@ -130,6 +135,7 @@ export default defineConfig({
           { text: 'Web Extensions', link: '/web-extensions' },
           { text: 'Android Apps', link: '/android-apps' },
           { text: 'NPM Packages', link: '/npm-packages' },
+          { text: 'Websites', link: '/sites' },
         ],
       },
       {
