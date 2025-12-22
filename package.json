@@ -8,10 +8,10 @@
     "prettier:write": "npx prettier --write ."
   },
   "dependencies": {
-    "lucide-vue-next": "^0.555.0",
+    "lucide-vue-next": "^0.562.0",
     "vitepress": "^1.6.4"
   },
   "devDependencies": {
-    "prettier": "^3.7.3"
+    "prettier": "^3.7.4"
   }
 }

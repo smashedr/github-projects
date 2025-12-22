@@ -6,12 +6,12 @@ NPM Packages
 
 <!--suppress ES6UnusedImports -->
 <script setup>
-import { npmVitePressPlugins } from '../../.vitepress/scripts/apps.js'
+import { pythonPackages } from '../../.vitepress/scripts/apps.js'
 </script>
 
 ## VitePress Plugins
 
-<GitHubTable title="NPM Packages" :full="true" :repos="npmVitePressPlugins" />
+<GitHubTable title="Python Packages" :full="true" :repos="pythonPackages" />
 
 ### Links
 

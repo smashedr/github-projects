@@ -75,6 +75,7 @@ export default defineConfig({
           { text: 'GitHub Actions', link: '/pages/github-actions' },
           { text: 'Web Extensions', link: '/pages/web-extensions' },
           { text: 'Android Apps', link: '/pages/android-apps' },
+          { text: 'Python Packages', link: '/pages/python-packages' },
           { text: 'NPM Packages', link: '/pages/npm-packages' },
           { text: 'Websites', link: '/pages/sites' },
           //
@@ -134,6 +135,7 @@ export default defineConfig({
           { text: 'GitHub Actions', link: '/github-actions' },
           { text: 'Web Extensions', link: '/web-extensions' },
           { text: 'Android Apps', link: '/android-apps' },
+          { text: 'Python Packages', link: '/python-packages' },
           { text: 'NPM Packages', link: '/npm-packages' },
           { text: 'Websites', link: '/sites' },
         ],

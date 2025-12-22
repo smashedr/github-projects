@@ -80,3 +80,12 @@ export const npmVitePressPlugins = [
     'cssnr/vitepress-plugin-contributors',
     'cssnr/vitepress-plugin-copybutton',
 ]
+
+export const pythonPackages = [
+    'cssnr/toml-run',
+    'cssnr/sharex-cli',
+    'cssnr/zipline-cli',
+    'cssnr/npmstat',
+    'cssnr/actions-tools',
+    'cssnr/vultr-python',
+]
