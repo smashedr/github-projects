@@ -21,9 +21,13 @@
 
 [Zensical Source](https://github.com/zensical/zensical) - [Docs](https://zensical.org/docs/get-started/)
 
-- [Zipline CLI](https://github.com/cssnr/zipline-cli) - https://zipline-cli.cssnr.com/
-- [Actions Tools](https://github.com/cssnr/actions-tools) - https://actions-tools.cssnr.com/
-- [Zensical Action](https://github.com/cssnr/zensical-action) - https://zensical-action.cssnr.com/
+- [Actions Tools](https://github.com/cssnr/actions-tools) - <https://actions-tools.cssnr.com/>
+- [Brew Python Resources](https://github.com/cssnr/brew-python-resources) - <https://cssnr.github.io/brew-python-resources/>
+- [NPM Stat](https://github.com/cssnr/npmstat) - <https://cssnr.github.io/npmstat/>
+- [ShareX CLI](https://github.com/cssnr/sharex-cli) - <https://cssnr.github.io/sharex-cli/>
+- [TOML Run](https://github.com/cssnr/toml-run) - <https://cssnr.github.io/toml-run/>
+- [Zensical Action](https://github.com/cssnr/zensical-action) - <https://zensical-action.cssnr.com/>
+- [Zipline CLI](https://github.com/cssnr/zipline-cli) - <https://zipline-cli.cssnr.com/>
 
 ## Other Sites
 

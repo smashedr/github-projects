@@ -82,10 +82,11 @@ export const npmVitePressPlugins = [
 ]
 
 export const pythonPackages = [
-    'cssnr/toml-run',
-    'cssnr/sharex-cli',
-    'cssnr/zipline-cli',
-    'cssnr/npmstat',
     'cssnr/actions-tools',
+    'cssnr/brew-python-resources',
+    'cssnr/npmstat',
+    'cssnr/sharex-cli',
+    'cssnr/toml-run',
     'cssnr/vultr-python',
+    'cssnr/zipline-cli',
 ]
