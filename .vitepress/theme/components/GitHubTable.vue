@@ -47,7 +47,9 @@ function shortName(repo) {
     <tbody>
       <tr v-for="repo in props.repos" :key="repo">
         <td class="repository">
-          <a :href="`https://github.com/${repo}`" :title="repo" target="_blank" rel="noopener">{{ shortName(repo) }}</a>
+          <a :href="`https://github.com/${repo}`" :title="repo" target="_blank" rel="noopener">{{
+            shortName(repo)
+          }}</a>
         </td>
         <td class="center">
           <a :href="`https://github.com/${repo}/stargazers`" target="_blank" rel="noopener">

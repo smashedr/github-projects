@@ -2,5 +2,5 @@
 * text=auto eol=lf
 
 # Fine-tune GitHub's language detection
-docs/**/*.md linguist-language=Markdown
-#docs/** linguist-detectable
+docs/**/*.md linguist-detectable=true
+docs/**/*.md linguist-documentation=false

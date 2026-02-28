@@ -28,6 +28,7 @@
 - [TOML Run](https://github.com/cssnr/toml-run) - <https://cssnr.github.io/toml-run/>
 - [Zensical Action](https://github.com/cssnr/zensical-action) - <https://zensical-action.cssnr.com/>
 - [Zipline CLI](https://github.com/cssnr/zipline-cli) - <https://zipline-cli.cssnr.com/>
+- [Remote Wallpaper](https://github.com/cssnr/remote-wallpaper-android) - <https://cssnr.github.io/remote-wallpaper-android/>
 
 ## Other Sites
 
