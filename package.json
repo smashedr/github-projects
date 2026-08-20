@@ -4,14 +4,15 @@
     "docs:build": "vitepress build .",
     "docs:dev": "vitepress dev .",
     "docs:preview": "vitepress preview .",
+    "prettier": "npm run prettier:write",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write ."
   },
   "dependencies": {
-    "lucide-vue-next": "^0.575.0",
+    "lucide-vue-next": "^1.0.0",
     "vitepress": "^1.6.4"
   },
   "devDependencies": {
-    "prettier": "^3.8.1"
+    "prettier": "^3.9.6"
   }
 }

@@ -31,7 +31,7 @@ features:
     link: /pages/web-extensions
   - title: Android Applications
     details: Native and Flutter Apps
-    link: /pages/npm-packages
+    link: /pages/android-apps
   - title: NPM Packages
     details: VitePress Plugins and More
     link: /pages/npm-packages

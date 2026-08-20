@@ -1,7 +1,7 @@
 {
   "semi": false,
   "singleQuote": true,
-  "printWidth": 110,
+  "printWidth": 120,
   "overrides": [
     {
       "files": ["**/*.html", "**/*.yaml", "**/*.yml"],

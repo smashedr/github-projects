@@ -11,7 +11,7 @@ import { androidApps } from '../../.vitepress/scripts/apps.js'
 
 ## All Applications
 
-<GitHubTable title="Android Applications" :full="true" :repos="androidApps" />
+<GitHubTable title="Android Applications" :full="true" :repos="androidApps" :prerelease="true" />
 
 ### Obtainium
 

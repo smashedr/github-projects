@@ -8,6 +8,7 @@ const props = defineProps({
   full: { type: Boolean, default: false },
   style: { type: String, default: 'flat' },
   size: { type: Number, default: 20 },
+  prerelease: { type: Boolean, default: false },
 })
 
 // console.log('props.repos:', props.repos)
@@ -18,7 +19,7 @@ function getLink(type, repo) {
     forks: `https://img.shields.io/github/forks/${repo}?style=${props.style}&label=%20&color=blue`,
     last: `https://img.shields.io/github/last-commit/${repo}?style=${props.style}&label=%20&display_timestamp=committer`,
     language: `https://img.shields.io/github/languages/top/${repo}?style=${props.style}`,
-    version: `https://img.shields.io/github/v/release/${repo}?style=${props.style}&label=%20`,
+    version: `https://img.shields.io/github/v/release/${repo}?style=${props.style}&label=%20${props.prerelease ? '&include_prereleases' : ''}`,
   }[type]
 }
 
@@ -47,9 +48,7 @@ function shortName(repo) {
     <tbody>
       <tr v-for="repo in props.repos" :key="repo">
         <td class="repository">
-          <a :href="`https://github.com/${repo}`" :title="repo" target="_blank" rel="noopener">{{
-            shortName(repo)
-          }}</a>
+          <a :href="`https://github.com/${repo}`" :title="repo" target="_blank" rel="noopener">{{ shortName(repo) }}</a>
         </td>
         <td class="center">
           <a :href="`https://github.com/${repo}/stargazers`" target="_blank" rel="noopener">
