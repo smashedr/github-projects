@@ -70,8 +70,10 @@ export const extensionsTemplate = [
 export const androidApps = [
     'django-files/android-client',
     'cssnr/zipline-android',
-    'cssnr/noaa-weather-android',
     'cssnr/remote-wallpaper-android',
+    'cssnr/parking-android',
+    'cssnr/todolist-android',
+    'cssnr/noaa-weather-android',
     'cssnr/tibs3dprints-android',
 ]
 

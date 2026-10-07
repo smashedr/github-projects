@@ -20,7 +20,9 @@ Import List for [Obtainium](https://github.com/ImranR98/Obtainium).
 ```text
 https://github.com/django-files/android-client
 https://github.com/cssnr/zipline-android
-https://github.com/cssnr/noaa-weather-android
 https://github.com/cssnr/remote-wallpaper-android
+https://github.com/cssnr/todolist-android
+https://github.com/cssnr/parking-android
+https://github.com/cssnr/noaa-weather-android
 https://github.com/cssnr/tibs3dprints-android
 ```
